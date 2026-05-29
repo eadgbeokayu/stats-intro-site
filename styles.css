@@ -1,17 +1,17 @@
 :root {
   color-scheme: light;
-  --ink: #172126;
-  --muted: #687579;
-  --paper: #f7f2ea;
-  --surface: #fffcf6;
-  --line: #d8cbc0;
-  --green: #2e7d65;
-  --coral: #c75b45;
-  --blue: #4267a8;
-  --gold: #d49a39;
-  --violet: #7661a6;
-  --dark: #102b2d;
-  --shadow: 0 18px 50px rgba(23, 33, 38, 0.12);
+  --ink: #172033;
+  --muted: #65718c;
+  --paper: #eef3fb;
+  --surface: #fbfdff;
+  --line: #cad5e8;
+  --green: #2f8f83;
+  --coral: #c24f8d;
+  --blue: #315bb7;
+  --gold: #d79b36;
+  --violet: #6a4bc3;
+  --dark: #18234a;
+  --shadow: 0 18px 50px rgba(24, 35, 74, 0.13);
 }
 
 * {
@@ -45,7 +45,7 @@ a {
   height: 100vh;
   padding: 28px 22px;
   background: var(--dark);
-  color: #f4eadf;
+  color: #eff4ff;
   border-right: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -78,7 +78,7 @@ a {
 }
 
 .brand span {
-  color: #b8c4bd;
+  color: #b9c6e4;
   font-size: 12px;
   margin-top: 3px;
 }
@@ -91,7 +91,7 @@ a {
 .nav-link {
   padding: 11px 12px;
   border-left: 3px solid transparent;
-  color: #d9e0dc;
+  color: #dce6ff;
   font-size: 14px;
   text-decoration: none;
 }
@@ -115,8 +115,8 @@ main {
   align-items: center;
   padding: 64px clamp(28px, 5vw, 80px);
   background:
-    linear-gradient(90deg, rgba(247, 242, 234, 0.96), rgba(247, 242, 234, 0.86)),
-    repeating-linear-gradient(0deg, rgba(16, 43, 45, 0.05), rgba(16, 43, 45, 0.05) 1px, transparent 1px, transparent 42px);
+    linear-gradient(90deg, rgba(238, 243, 251, 0.97), rgba(238, 243, 251, 0.88)),
+    repeating-linear-gradient(0deg, rgba(49, 91, 183, 0.07), rgba(49, 91, 183, 0.07) 1px, transparent 1px, transparent 42px);
 }
 
 .eyebrow {
@@ -191,8 +191,8 @@ h1 {
 .process-card {
   min-height: 150px;
   padding: 18px;
-  background: #173f3f;
-  color: #dce6e0;
+  background: #243769;
+  color: #e7ecff;
 }
 
 .process-card.active {
@@ -301,7 +301,7 @@ select {
   align-items: center;
   min-height: 26px;
   padding: 3px 10px;
-  background: #e8f0eb;
+  background: #e9edff;
   color: var(--green);
   font-size: 12px;
   font-weight: 800;
@@ -333,14 +333,14 @@ select {
 .tag {
   padding: 6px 10px;
   border: 1px solid var(--line);
-  background: #f2ebe3;
+  background: #e9eef9;
   color: var(--ink);
   font-size: 13px;
   font-weight: 700;
 }
 
 .methods-band {
-  background: #fbf7ef;
+  background: #f3f6fc;
 }
 
 .method-layout {
@@ -415,7 +415,7 @@ select {
   min-height: 160px;
   padding: 18px;
   border: 1px solid var(--line);
-  background: #fffaf2;
+  background: #ffffff;
 }
 
 .info-box h4 {
@@ -437,7 +437,7 @@ select {
 }
 
 .simulator-band {
-  background: #f2eee7;
+  background: #e8eef8;
 }
 
 .controls {
@@ -469,7 +469,7 @@ input[type="range"] {
   width: min(340px, 86vw);
   height: 44px;
   overflow: hidden;
-  background: #e8ded4;
+  background: #dce5f5;
 }
 
 .gauge-fill {
@@ -502,7 +502,7 @@ input[type="range"] {
 }
 
 .tree-band {
-  background: #fbf7ef;
+  background: #f3f6fc;
 }
 
 .tree-lab {
@@ -529,7 +529,7 @@ input[type="range"] {
 .tree-canvas {
   min-height: 400px;
   padding: 28px;
-  background: #efe7dc;
+  background: #e5ecf8;
   border: 1px solid var(--line);
 }
 
@@ -611,7 +611,7 @@ input[type="range"] {
   grid-template-columns: 1fr 70px;
   gap: 8px;
   padding: 9px 10px;
-  background: #f5eee5;
+  background: #e9eef9;
   font-size: 14px;
 }
 
@@ -655,7 +655,7 @@ input[type="range"] {
 
 .case-pill {
   padding: 14px;
-  background: #f4eadf;
+  background: #e9eef9;
   border-left: 5px solid var(--green);
   font-weight: 700;
   line-height: 1.55;
