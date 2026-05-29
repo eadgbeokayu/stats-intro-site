@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>解析・統計 入門 | 使い分けて学ぶインタラクティブ教材</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="学習ナビゲーション">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">Σ</span>
+          <div>
+            <strong>解析・統計 入門</strong>
+            <span>目的から手法を選ぶ</span>
+          </div>
+        </div>
+        <nav class="nav-list">
+          <a href="#overview" class="nav-link active">全体像</a>
+          <a href="#chooser" class="nav-link">手法選び</a>
+          <a href="#methods" class="nav-link">手法別解説</a>
+          <a href="#tree-lab" class="nav-link">決定木ラボ</a>
+          <a href="#case" class="nav-link">検診受診率ケース</a>
+          <a href="#checklist" class="nav-link">分析前チェック</a>
+        </nav>
+      </aside>
+
+      <main>
+        <section id="overview" class="hero-section">
+          <div class="hero-copy">
+            <p class="eyebrow">BEGINNER FRIENDLY ANALYTICS</p>
+            <h1>「どの分析を使うか」を、問いから選べるようになる。</h1>
+            <p class="lead">
+              回帰分析、ロジスティック回帰、決定木、検定、クラスタリングを、検診受診率アップの例で学ぶWeb教材です。
+              数式ではなく、目的・読み方・作り方・施策へのつなげ方を中心にしています。
+            </p>
+            <div class="hero-actions">
+              <a href="#chooser" class="primary-action">手法を選んでみる</a>
+              <a href="#tree-lab" class="secondary-action">決定木を作ってみる</a>
+            </div>
+          </div>
+          <div class="hero-visual" aria-label="分析プロセスの図">
+            <div class="process-card active">
+              <span>1</span>
+              <strong>問い</strong>
+              <p>何を判断したいか</p>
+            </div>
+            <div class="process-card">
+              <span>2</span>
+              <strong>型</strong>
+              <p>数値・二値・分類</p>
+            </div>
+            <div class="process-card">
+              <span>3</span>
+              <strong>手法</strong>
+              <p>回帰・検定・木</p>
+            </div>
+            <div class="process-card">
+              <span>4</span>
+              <strong>施策</strong>
+              <p>誰に何をするか</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="band" id="chooser">
+          <div class="section-heading">
+            <p class="eyebrow">METHOD CHOOSER</p>
+            <h2>答えたい問いを選ぶと、候補手法が出ます。</h2>
+            <p>完璧な分類ではなく、初心者が迷ったときの最初の地図です。</p>
+          </div>
+          <div class="chooser-layout">
+            <div class="question-panel">
+              <label for="goalSelect">知りたいこと</label>
+              <select id="goalSelect">
+                <option value="difference">グループごとの違いを知りたい</option>
+                <option value="numeric">数値を予測・説明したい</option>
+                <option value="binary">する / しないを予測したい</option>
+                <option value="segment">対象者を層に分けたい</option>
+                <option value="time">いつ起きるかを見たい</option>
+              </select>
+
+              <label for="outcomeSelect">目的変数の型</label>
+              <select id="outcomeSelect">
+                <option value="rate">割合・はい/いいえ</option>
+                <option value="number">連続した数値</option>
+                <option value="category">カテゴリ</option>
+                <option value="none">目的変数なし・探索</option>
+              </select>
+
+              <label for="prioritySelect">重視したいこと</label>
+              <select id="prioritySelect">
+                <option value="action">施策に落としやすいこと</option>
+                <option value="explain">説明しやすいこと</option>
+                <option value="accuracy">予測精度</option>
+                <option value="simple">まず簡単に試すこと</option>
+              </select>
+            </div>
+            <div class="recommendation-panel" aria-live="polite">
+              <span class="panel-label">おすすめ</span>
+              <h3 id="recommendTitle">ロジスティック回帰 + 決定木</h3>
+              <p id="recommendBody"></p>
+              <div id="recommendTags" class="tag-row"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="band methods-band" id="methods">
+          <div class="section-heading">
+            <p class="eyebrow">METHOD GUIDE</p>
+            <h2>主要手法を、使いどころから詳しく見る。</h2>
+            <p>左のボタンを押すと、具体例・読み方・自分で作れるか・注意点が切り替わります。</p>
+          </div>
+          <div class="method-layout">
+            <div class="method-tabs" role="tablist" aria-label="手法">
+              <button class="method-tab active" data-method="cross" type="button">集計・検定</button>
+              <button class="method-tab" data-method="linear" type="button">回帰分析</button>
+              <button class="method-tab" data-method="logistic" type="button">ロジスティック</button>
+              <button class="method-tab" data-method="tree" type="button">決定木</button>
+              <button class="method-tab" data-method="cluster" type="button">クラスタリング</button>
+            </div>
+            <article class="method-detail">
+              <div class="method-title-row">
+                <span id="methodBadge" class="method-badge">比較</span>
+                <h3 id="methodTitle">集計・検定</h3>
+              </div>
+              <p id="methodSummary" class="method-summary"></p>
+              <div id="methodGrid" class="info-grid"></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="band simulator-band" id="simulator">
+          <div class="section-heading">
+            <p class="eyebrow">PROBABILITY SIMULATOR</p>
+            <h2>ロジスティック回帰の考え方を、確率スコアで体感する。</h2>
+            <p>係数や式は出さず、条件を変えると「受診しやすさ」がどう変わるかを見ます。</p>
+          </div>
+          <div class="simulator">
+            <div class="controls">
+              <label>
+                年齢
+                <input id="ageRange" type="range" min="20" max="70" value="42" />
+                <span id="ageValue">42歳</span>
+              </label>
+              <label>
+                前回受診
+                <select id="previousVisit">
+                  <option value="yes">した</option>
+                  <option value="no">していない</option>
+                </select>
+              </label>
+              <label>
+                予約支援
+                <select id="supportLevel">
+                  <option value="none">なし</option>
+                  <option value="reminder">リマインド</option>
+                  <option value="booking">日程提案つき</option>
+                </select>
+              </label>
+            </div>
+            <div class="score-card">
+              <div class="gauge">
+                <div id="gaugeFill" class="gauge-fill"></div>
+                <span id="probabilityLabel">58%</span>
+              </div>
+              <h3 id="riskLabel">中程度の受診見込み</h3>
+              <p id="probabilityNote"></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="band tree-band" id="tree-lab">
+          <div class="section-heading">
+            <p class="eyebrow">DECISION TREE LAB</p>
+            <h2>決定木は、自分でも「分岐ルール」として作れます。</h2>
+            <p>
+              本格的にはRやPythonで作りますが、考え方はシンプルです。どの条件で分けると、受診率の差が大きくなるかを試します。
+            </p>
+          </div>
+          <div class="tree-lab">
+            <div class="split-controls">
+              <p class="small-title">最初の分岐を選ぶ</p>
+              <button class="split-btn active" data-split="previous" type="button">前回受診したか</button>
+              <button class="split-btn" data-split="age" type="button">40歳以上か</button>
+              <button class="split-btn" data-split="work" type="button">勤務時間が不規則か</button>
+              <button class="split-btn" data-split="family" type="button">家族と同居か</button>
+            </div>
+            <div class="tree-canvas">
+              <div class="tree-node root" id="treeRoot">分岐条件</div>
+              <div class="tree-branches">
+                <div class="tree-node yes">
+                  <span>はい</span>
+                  <strong id="yesRate">72%</strong>
+                  <small id="yesCount">8人中</small>
+                </div>
+                <div class="tree-node no">
+                  <span>いいえ</span>
+                  <strong id="noRate">32%</strong>
+                  <small id="noCount">7人中</small>
+                </div>
+              </div>
+            </div>
+            <div class="tree-explain">
+              <span class="panel-label">読み方</span>
+              <h3 id="treeHeadline">前回受診は、受診率を大きく分ける候補です。</h3>
+              <p id="treeExplanation"></p>
+              <div class="mini-table" id="treeTable"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="band case-band" id="case">
+          <div class="section-heading">
+            <p class="eyebrow">SCREENING UPTAKE CASE</p>
+            <h2>検診受診率アップなら、手法は組み合わせて使う。</h2>
+            <p>同僚の方の話に近い実務テーマでは、1つの手法で終わらせないほうが強いです。</p>
+          </div>
+          <div class="case-steps">
+            <button class="case-step active" data-case="1" type="button">
+              <span>1</span>
+              現状把握
+            </button>
+            <button class="case-step" data-case="2" type="button">
+              <span>2</span>
+              予測
+            </button>
+            <button class="case-step" data-case="3" type="button">
+              <span>3</span>
+              層別施策
+            </button>
+            <button class="case-step" data-case="4" type="button">
+              <span>4</span>
+              効果検証
+            </button>
+          </div>
+          <div class="case-output">
+            <h3 id="caseTitle">まずは、どの層で受診率が低いかを見る。</h3>
+            <p id="caseBody"></p>
+            <div id="caseBullets" class="case-bullets"></div>
+          </div>
+        </section>
+
+        <section class="band checklist-band" id="checklist">
+          <div class="section-heading">
+            <p class="eyebrow">BEFORE ANALYSIS</p>
+            <h2>分析を始める前のチェックリスト。</h2>
+            <p>きれいなモデルより、使える問いとデータ準備が大切です。</p>
+          </div>
+          <div class="checklist">
+            <label><input type="checkbox" /> 目的変数がはっきりしている</label>
+            <label><input type="checkbox" /> 説明変数が施策に使える形で集まっている</label>
+            <label><input type="checkbox" /> データの欠損・重複・外れ値を確認した</label>
+            <label><input type="checkbox" /> 分析結果を見た後に取れるアクションがある</label>
+            <label><input type="checkbox" /> 効果検証の方法を先に決めている</label>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
